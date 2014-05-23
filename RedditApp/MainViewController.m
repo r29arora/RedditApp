@@ -9,6 +9,8 @@
 #import "MainViewController.h"
 #import "RedditService.h"
 #import <CSAnimationView.h>
+#import <MZFormSheetController.h>
+#import <FlatUIKit.h>
 
 @interface MainViewController ()
 
@@ -33,13 +35,15 @@
     CGRect screenRect =[[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = screenRect.size.height;
-    CGRect tableViewFrame = CGRectMake(0, 20, screenWidth, screenHeight);
+    CGRect tableViewFrame = CGRectMake(0, 0, screenWidth, screenHeight);
     UITableView *contentTableView = [[UITableView alloc] initWithFrame:tableViewFrame];
     contentTableView.backgroundColor = [UIColor whiteColor];
     //[self.view addSubview:contentTableView];
     [contentTableView setDataSource:self];
+    [contentTableView setDelegate:self];
+    [contentTableView setAllowsSelection:YES];
     [self.view addSubview:contentTableView];
-    
+    [self.navigationController.navigationBar configureFlatNavigationBarWithColor:[UIColor midnightBlueColor]];
     RedditService *redditNetwork = [[RedditService alloc] init];
     
     [redditNetwork setResultHandlerBlock:^(NSDictionary *dictionary) {
@@ -49,19 +53,27 @@
             [tableData addObject:[[dict objectForKey:@"data"] objectForKey:@"title"]];
             [contentTableView reloadData];
         }
-        NSLog(@"%@",tableData);
     }];
     [redditNetwork setErrorHandlerBlock:^(NSError *error){
         NSLog(@"Error: %@", error);
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Data"
+        FUIAlertView *alertView = [[FUIAlertView alloc] initWithTitle:@"Error Retrieving Data"
                                                             message:[error localizedDescription]
                                                             delegate:nil
                                                     cancelButtonTitle:@"Ok"
                                                     otherButtonTitles:nil];
+        alertView.titleLabel.textColor = [UIColor cloudsColor];
+        alertView.titleLabel.font = [UIFont boldFlatFontOfSize:16];
+        alertView.messageLabel.textColor = [UIColor cloudsColor];
+        alertView.messageLabel.font = [UIFont flatFontOfSize:14];
+        alertView.backgroundOverlay.backgroundColor = [[UIColor cloudsColor] colorWithAlphaComponent:0.8];
+        alertView.alertContainer.backgroundColor = [UIColor midnightBlueColor];
+        alertView.defaultButtonColor = [UIColor cloudsColor];
+        alertView.defaultButtonShadowColor = [UIColor asbestosColor];
+        alertView.defaultButtonFont = [UIFont boldFlatFontOfSize:16];
+        alertView.defaultButtonTitleColor = [UIColor asbestosColor];
         [alertView show];
             
     }];
-
     [redditNetwork GETRequestwith:nil and:@"http://reddit.com/hot.json"];
 }  
 
@@ -73,12 +85,17 @@
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 1;
 }
 
 - (UIFont *)fontForCell
 {
     return [UIFont systemFontOfSize:11];
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"Index Path: %@",indexPath);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

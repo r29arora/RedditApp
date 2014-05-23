@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-FlatUIKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-MZAppearance.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,27 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1B7471CBF93046C1AB8F3D5D</key>
+		<key>19596D4F1EDF4A54B47DCC85</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A9C3B0EDFF8B4DE1ADC7A79C</key>
+		<key>1A5B1F0BB87043B18C93E285</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D4C3BFB8B60E4C2499F89EFD</key>
+		<key>380E3C9B8AA04D8B98AEE359</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DCF0F177757C4E7D93BE92AA</key>
+		<key>4C3AC18ABE634B068B868094</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F26E52AAB42E44899B57CE28</key>
+		<key>607B978CDBC247FEB0AD49D2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>879C5A1016A045C2AABDA499</key>
 		<dict>
 			<key>primary</key>
 			<true/>
