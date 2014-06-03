@@ -11,6 +11,7 @@
 #import <CSAnimationView.h>
 #import <MZFormSheetController.h>
 #import <FlatUIKit.h>
+#import <POP/POP.h>
 
 @interface MainViewController ()
 
@@ -23,6 +24,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         tableData = [[NSMutableArray alloc] init];
+        imageURLs = [[NSMutableArray alloc] init];
+        domains = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -30,6 +33,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 	// Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     CGRect screenRect =[[UIScreen mainScreen] bounds];
@@ -47,12 +51,17 @@
     RedditService *redditNetwork = [[RedditService alloc] init];
     
     [redditNetwork setResultHandlerBlock:^(NSDictionary *dictionary) {
+        
         NSDictionary *dataDict = [dictionary objectForKey:@"data"];
-        NSDictionary *chilrenDict = [dataDict objectForKey:@"children"];
-        for (NSDictionary *dict in chilrenDict){
+        NSDictionary *childrenDict = [dataDict objectForKey:@"children"];
+        
+        for (NSDictionary *dict in childrenDict){
             [tableData addObject:[[dict objectForKey:@"data"] objectForKey:@"title"]];
+            [imageURLs addObject:[[dict objectForKey:@"data"] objectForKey:@"url"]];
+            [domains addObject:[[dict objectForKey:@"data"] objectForKey:@"domain"]];
             [contentTableView reloadData];
         }
+        NSLog(@"%@",imageURLs);
     }];
     [redditNetwork setErrorHandlerBlock:^(NSError *error){
         NSLog(@"Error: %@", error);
@@ -105,12 +114,45 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
-        cell.textLabel.numberOfLines = 4;
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:simpleTableIdentifier];
+        cell.textLabel.numberOfLines = 2;
+        cell.detailTextLabel.numberOfLines = 1;
         cell.textLabel.font = [self fontForCell];
+        cell.detailTextLabel.font = [self fontForCell];
+        
     }
+    
     cell.textLabel.text = [tableData objectAtIndex:indexPath.row];
+    cell.detailTextLabel.text = [domains objectAtIndex:indexPath.row];
+    cell.imageView.autoresizesSubviews = YES;
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    
+    //1. Setup the CATransform3D structure
+    CATransform3D rotation;
+    rotation = CATransform3DMakeRotation( (90.0*M_PI)/180, 0.0, 0.7, 0.4);
+    rotation.m34 = 1.0/ -600;
+    
+    
+    //2. Define the initial state (Before the animation)
+    cell.layer.shadowColor = [[UIColor blackColor]CGColor];
+    cell.layer.shadowOffset = CGSizeMake(10, 10);
+    cell.alpha = 0;
+    
+    cell.layer.transform = rotation;
+    cell.layer.anchorPoint = CGPointMake(0, 0.5);
+    
+    
+    //3. Define the final state (After the animation) and commit the animation
+    [UIView beginAnimations:@"rotation" context:NULL];
+    [UIView setAnimationDuration:0.8];
+    cell.layer.transform = CATransform3DIdentity;
+    cell.alpha = 1;
+    cell.layer.shadowOffset = CGSizeMake(0, 0);
+    [UIView commitAnimations];
 }
 
 - (void)didReceiveMemoryWarning

@@ -10,6 +10,10 @@
 
 @interface MainViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     NSMutableArray *tableData;
+    NSMutableArray *imageURLs;
+    NSMutableArray *domains;
+    NSString *before;
+    NSString *after;
 }
 
 @end
