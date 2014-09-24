@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A3195D2F-13FE-47AE-8AD6-4ED088271B84</string>
+	<key>IDESourceControlProjectName</key>
+	<string>RedditApplication</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>EDEE56B3812D56DE3389A07C23695915797D3CBC</key>
+		<string>https://github.com/r29arora/RedditApp.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>RedditApplication/RedditApplication.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>EDEE56B3812D56DE3389A07C23695915797D3CBC</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/r29arora/RedditApp.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>EDEE56B3812D56DE3389A07C23695915797D3CBC</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EDEE56B3812D56DE3389A07C23695915797D3CBC</string>
+			<key>IDESourceControlWCCName</key>
+			<string>RedditApp</string>
+		</dict>
+	</array>
+</dict>
+</plist>
