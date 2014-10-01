@@ -47,6 +47,10 @@ class LoginViewController: UIViewController {
         else if (passwordTextField.text.isEmpty){
             println("Enter a Password")
         }
+        else {
+            RedditUser.sharedInstance.username = usernameTextField.text
+            RedditUser.login()
+        }
     }
     
 }

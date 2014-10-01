@@ -18,4 +18,14 @@ class RedditUser{
         }
         return Static.instance
     }
+    
+    init() {
+        println("Singleton Initiated")
+    }
+    
+    class func login(){
+        if(RedditUser.sharedInstance.username.length > 0 && !RedditUser.sharedInstance.isLoggedIn){
+            println("Logging in user")
+        }
+    }
 }
