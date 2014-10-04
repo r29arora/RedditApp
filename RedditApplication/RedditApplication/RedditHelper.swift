@@ -10,6 +10,7 @@ import Foundation
 
 class RedditUser{
     var username:NSString = NSString()
+    var password:NSString = NSString()
     var isLoggedIn:Bool = false
     
     class var sharedInstance:RedditUser{
@@ -23,9 +24,9 @@ class RedditUser{
         println("Singleton Initiated")
     }
     
-    class func login(){
+    class func login(params:NSDictionary, completion:RKCompletionBlock){
         if(RedditUser.sharedInstance.username.length > 0 && !RedditUser.sharedInstance.isLoggedIn){
-            println("Logging in user")
+            RedditNetwork.login(RedditUser.sharedInstance.username, password: RedditUser.sharedInstance.password, completion)
         }
     }
 }

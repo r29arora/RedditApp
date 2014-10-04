@@ -6,23 +6,53 @@
 	<dict>
 		<key>Pods-AFNetworking.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-JGProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Mantle.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-RedditKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>6D8BADB67B134741B65A887D</key>
+		<key>70FDC8BBA00C4AA48696C1D8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DF12561D4DA34DFDBD0F7C94</key>
+		<key>793959499537444CB75F57CB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9E07B863034A4D668409F777</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AA00FBD77E8B49D8832CD831</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ECAB0D77151447188F1A79DF</key>
 		<dict>
 			<key>primary</key>
 			<true/>

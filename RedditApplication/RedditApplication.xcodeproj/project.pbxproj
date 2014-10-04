@@ -16,6 +16,8 @@
 		8F6868D019D365590044ED0E /* RedditApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6868CF19D365590044ED0E /* RedditApplicationTests.swift */; };
 		8FC5D3F419D375D4007B7DCD /* RedditHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC5D3F319D375D4007B7DCD /* RedditHelper.swift */; };
 		8FD1A2E419D4BC5A0037327C /* RedditApplication-Bridging-Header.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD1A2E319D4BC5A0037327C /* RedditApplication-Bridging-Header.m */; };
+		AA855F1B19DC2ED200050125 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA855F1A19DC2ED200050125 /* ContentViewController.swift */; };
+		AAE0E44019DE2E69009B4A3D /* RedditNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE0E43F19DE2E69009B4A3D /* RedditNetwork.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		8FD1A2E219D4BC590037327C /* RedditApplication-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RedditApplication-Bridging-Header.h"; sourceTree = "<group>"; };
 		8FD1A2E319D4BC5A0037327C /* RedditApplication-Bridging-Header.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RedditApplication-Bridging-Header.m"; sourceTree = "<group>"; };
 		93D9C996E9644DD7BDBEA03B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		AA855F1A19DC2ED200050125 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		AAE0E43F19DE2E69009B4A3D /* RedditNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedditNetwork.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				8F081B8A19D3685D0067707B /* LoginViewController.swift */,
+				AA855F1A19DC2ED200050125 /* ContentViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 		8F6868B619D365590044ED0E /* RedditApplication */ = {
 			isa = PBXGroup;
 			children = (
+				AAE0E43E19DE2E5A009B4A3D /* Network */,
 				8F081B8919D3669C0067707B /* Extensions */,
 				8F081B8819D366930067707B /* Helpers */,
 				8F081B8719D3667D0067707B /* Controllers */,
@@ -156,6 +162,14 @@
 				8F6868CE19D365590044ED0E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AAE0E43E19DE2E5A009B4A3D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				AAE0E43F19DE2E69009B4A3D /* RedditNetwork.swift */,
+			);
+			name = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,7 +307,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA855F1B19DC2ED200050125 /* ContentViewController.swift in Sources */,
 				8FC5D3F419D375D4007B7DCD /* RedditHelper.swift in Sources */,
+				AAE0E44019DE2E69009B4A3D /* RedditNetwork.swift in Sources */,
 				8F081B8B19D3685D0067707B /* LoginViewController.swift in Sources */,
 				8F6868BA19D365590044ED0E /* AppDelegate.swift in Sources */,
 				8FD1A2E419D4BC5A0037327C /* RedditApplication-Bridging-Header.m in Sources */,
