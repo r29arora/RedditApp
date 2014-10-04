@@ -12,6 +12,10 @@ class ContentViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        RedditNetwork.loadFrontPage()
+        RedditNetwork.loadFrontPage ({ (error:NSError?) -> Void in
+            if (error != nil){
+                println("Loaded Front Page")
+            }
+        })
     }
 }

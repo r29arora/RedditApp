@@ -50,7 +50,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     func keyboardWillShow(aNotification:NSNotification) -> Void {
         var info:NSDictionary = aNotification.userInfo!
         let kbSize:CGSize = info.objectForKey(UIKeyboardFrameBeginUserInfoKey)!.CGRectValue().size
-        self.scrollView.contentInset = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0)
+        self.scrollView.contentInset = UIEdgeInsetsMake(0.0, 0.0, kbSize.height/2.0, 0.0)
     }
     
     func keyboardWillHide(aNotification:NSNotification) -> Void {
@@ -86,13 +86,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             var nsparams:NSDictionary = NSDictionary(dictionary: params)
             
             hud.showInView(self.view)
-            RedditUser.login(nsparams, completion:{(error:NSError?) in
+            RedditUser.login(nsparams, completion:{(error:NSError?) -> Void in
                 if (error != nil){
                     println("Login Worked!")
                     RedditUser.sharedInstance.isLoggedIn = true
                     self.pushToContentViewController()
                 }
-                println("Error: \(error?.localizedDescription)")
+                else{
+                    println("Error: \(error?.localizedDescription)")
+                }
                 hud.dismissAfterDelay(0.5)
             })
 
