@@ -12,6 +12,7 @@ class RedditUser{
     var username:NSString = NSString()
     var password:NSString = NSString()
     var isLoggedIn:Bool = false
+    var currentPagination:RKPagination = RKPagination()
     
     class var sharedInstance:RedditUser{
         struct Static{

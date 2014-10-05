@@ -8,25 +8,14 @@
 
 import Foundation
 
-
 class RedditNetwork {
-
-    class func loadFrontPage(completion:RKCompletionBlock){
-        let manager:AFHTTPRequestOperationManager = AFHTTPRequestOperationManager(baseURL: NSURL(string: "http://reddit.com"))
-        manager.GET(".json", parameters: nil, success: { (operation:AFHTTPRequestOperation!, responseObject:AnyObject!) -> Void in
-            //println("Success JSON: \(responseObject.description)")
-            
-        }) { (operation:AFHTTPRequestOperation!, error:NSError!) -> Void in
-            println("error")
-        }
+    
+    class func loadFrontPage(completion:RKListingCompletionBlock, pagination: RKPagination){
+        RKClient.sharedClient().frontPageLinksWithPagination(pagination, completion: completion)
     }
     
     class func login(username:NSString, password:NSString, completion:RKCompletionBlock){
         RKClient.sharedClient().signInWithUsername(username, password: password, completion: completion)
-    }
-    
-    class func getUserData(username:NSString, completion:RKCompletionBlock){
-        RKClient.sharedClient()
     }
     
 }

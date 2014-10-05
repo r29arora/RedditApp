@@ -26,12 +26,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBarHidden = true
-        
         let tapAction:Selector = "didTapView"
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: tapAction))
         
         self.registerForKeyboardNotifications()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBarHidden = true
     }
     
     override func viewWillDisappear(animated: Bool) {

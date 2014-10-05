@@ -4,5 +4,4 @@
 
 #import "AFNetworking.h"
 #import "JGProgressHUD.h"
-#import "RKClient.h"
-#import "RKClient+Users.h"
+#import "RedditKit.h"

@@ -43,14 +43,14 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4y-X4-Og3">
                                         <rect key="frame" x="175" y="198" width="250" height="40"/>
-                                        <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.20000000000000001" green="0.40000000000000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="250" id="WMd-YV-K0h"/>
                                             <constraint firstAttribute="height" constant="40" id="lFq-LI-V3b"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <state key="normal" title="Login">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" red="0.80784313730000001" green="0.89019607840000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="loginButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hSR-jc-THC"/>
@@ -58,14 +58,14 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o8c-AE-uUV">
                                         <rect key="frame" x="175" y="243" width="250" height="40"/>
-                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.20000000000000001" green="0.40000000000000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="4nj-R6-Buw"/>
                                             <constraint firstAttribute="width" constant="250" id="76T-Sb-hSI"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <state key="normal" title="I'm a Lurker">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" red="0.80784313730000001" green="0.89019607840000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -97,7 +97,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.96862745098039216" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="Ftg-IK-BM6" secondAttribute="width" id="5hq-Zc-6qb"/>
                             <constraint firstAttribute="centerX" secondItem="Ftg-IK-BM6" secondAttribute="centerX" id="8bw-4M-qve"/>
@@ -112,6 +112,7 @@
                         <outlet property="passwordTextField" destination="j1X-4M-ncu" id="fUF-gk-Q0O"/>
                         <outlet property="scrollView" destination="Ftg-IK-BM6" id="F8Q-EP-v65"/>
                         <outlet property="usernameTextField" destination="nAh-Qn-yr7" id="egs-Nd-51H"/>
+                        <segue destination="Hjo-u0-ftq" kind="show" identifier="push" id="hiv-oG-SeE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -129,12 +130,61 @@
                     <view key="view" contentMode="scaleToFill" id="3ZV-Bd-vuQ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="25I-c6-x9o">
+                                <rect key="frame" x="0.0" y="560" width="600" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="fgm-gK-Gam"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dKs-Wg-Uu5">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" red="0.77647058823529413" green="0.77647058823529413" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dGW-HB-kZ9">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="Os2-ZG-KUQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="25I-c6-x9o" secondAttribute="width" id="6xs-eb-Q24"/>
+                            <constraint firstAttribute="centerX" secondItem="25I-c6-x9o" secondAttribute="centerX" id="DhQ-K2-McF"/>
+                            <constraint firstItem="dKs-Wg-Uu5" firstAttribute="top" secondItem="GeG-mc-5Uf" secondAttribute="bottom" id="Tsc-j0-Oj6"/>
+                            <constraint firstItem="cve-UM-IAf" firstAttribute="top" secondItem="dKs-Wg-Uu5" secondAttribute="bottom" id="Uhn-Jq-Wd0"/>
+                            <constraint firstAttribute="centerX" secondItem="dKs-Wg-Uu5" secondAttribute="centerX" id="b3W-Ma-PU0"/>
+                            <constraint firstItem="cve-UM-IAf" firstAttribute="top" secondItem="25I-c6-x9o" secondAttribute="bottom" id="fg9-vX-ZgA"/>
+                            <constraint firstAttribute="width" secondItem="dKs-Wg-Uu5" secondAttribute="width" id="g3f-hk-GQr"/>
+                            <constraint firstItem="25I-c6-x9o" firstAttribute="top" secondItem="dKs-Wg-Uu5" secondAttribute="bottom" id="ifb-tn-5N2"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ifb-tn-5N2"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="bottomBar" destination="25I-c6-x9o" id="3qp-iS-bcX"/>
+                        <outlet property="collectionView" destination="dKs-Wg-Uu5" id="WEr-94-Hjn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Din-Du-SMn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1487" y="797"/>
+            <point key="canvasLocation" x="1527" y="797"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ctx-mb-TDM">
